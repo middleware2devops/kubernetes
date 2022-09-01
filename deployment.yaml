@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tomcatswebapp
+  labels:
+    app: tomcatswebapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tomcatswebapp
+  template:
+    metadata:
+      labels:
+        app: tomcatswebapp
+    spec:
+      containers:
+      - name: tomcatswebapp
+        image: sreedhar4343/tomcat-samplewebapp-onlinepacks
+        ports:
+        - containerPort: 8080
+          name: tomcatswebapp
